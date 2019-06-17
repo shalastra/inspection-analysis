@@ -1,0 +1,14 @@
+version: '2.0'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5431:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=inspections
+    volumes:
+      - ./data:/data
