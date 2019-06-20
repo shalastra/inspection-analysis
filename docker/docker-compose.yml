@@ -1,14 +1,14 @@
-version: '2.0'
+version: '3.3'
 
 services:
-  postgres:
-    image: postgres
+  db:
+    build: ./db
     container_name: postgres
     ports:
       - "5431:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=inspections
+      - POSTGRES_DB=inspections_db
     volumes:
       - ./data:/data
