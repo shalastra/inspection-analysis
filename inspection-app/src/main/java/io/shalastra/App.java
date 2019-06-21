@@ -1,6 +1,9 @@
 package io.shalastra;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,9 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 public class App {
 
   public static void main(String[] args) {
-    log.info("test");
-
-    try(Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5431/inspections_db", "postgres", "postgres")) {
+    try(Connection connection = DataSource.getConnection()) {
       log.info("Java JDBC PostgreSQL Example");
 
       log.info("Connected to PostgreSQL database!");
