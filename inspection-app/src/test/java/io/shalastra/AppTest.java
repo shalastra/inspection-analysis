@@ -11,7 +11,9 @@ public class AppTest {
 
   @Test
   public void givenConnection_thenFetchDbData() throws SQLException {
-    List<String> rows = App.fetchData();
+    InspectionRepository repository = new InspectionRepository();
+
+    List<String> rows = repository.fetchData();
 
     assertEquals(4, rows.size());
   }

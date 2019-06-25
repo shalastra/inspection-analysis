@@ -12,3 +12,8 @@ services:
       - POSTGRES_DB=inspections_db
     volumes:
       - ./data:/data
+  app:
+    build: ../inspection-app/
+    container_name: app
+    depends_on:
+      - db
